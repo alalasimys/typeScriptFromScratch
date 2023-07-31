@@ -1,3 +1,1 @@
-# typeScriptFromScratch
-# typeScriptFromScratch
-# typeScriptFromScratch
+# TypeScript From Scratch Course Practice
