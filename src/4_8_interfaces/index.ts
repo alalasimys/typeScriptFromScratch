@@ -29,3 +29,21 @@ interface ResponseFailed {
   status: PaymentStatus.FAILED;
   data: FailedResponseData;
 }
+
+//Type Guard
+function isSuccess(
+  res: ResponseSuccess | ResponseFailed
+): res is ResponseSuccess {
+  if (res.status === PaymentStatus.SUCCESS) {
+    return true;
+  }
+  return false;
+}
+
+function getId(res: ResponseSuccess | ResponseFailed): number {
+  if (isSuccess(res)) {
+    return res.data.databaseId;
+  } else {
+    throw new Error(res.data.errorMessage);
+  }
+}
