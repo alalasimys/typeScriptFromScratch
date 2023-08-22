@@ -1,12 +1,12 @@
 // Декоратор, который обавляет свойство createdAt в класс, фиксируя дату создания
 
-interface IUserService {
+interface IUserService5 {
   users: number;
   getUserInDataBase(): number;
 }
 
 @CreatedAt
-class UserService implements IUserService {
+class UserService5 implements IUserService5 {
   users: number = 1000;
 
   getUserInDataBase(): number {
@@ -24,4 +24,4 @@ type CreatedAt = {
   createdAt: Date;
 };
 
-console.log((new UserService() as IUserService & CreatedAt).createdAt);
+console.log((new UserService5() as IUserService5 & CreatedAt).createdAt);
